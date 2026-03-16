@@ -10,8 +10,8 @@ function App() {
   return (
     <div>
       <h1>React Rest Countries</h1>
-      
-      <Suspense>
+      <h2>All the countries</h2>
+      <Suspense fallback={<h2>Loading...</h2>} >
         <Countries fetchCountries={fetchCountries}></Countries>
       </Suspense>
     </div>

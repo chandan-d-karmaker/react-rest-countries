@@ -7,7 +7,9 @@ const Countries = ({ fetchCountries }) => {
     const countries = allCountries.countries;
     // console.log(countries);
 
-    const cardStyle = {
+    const cardStyleParent = {
+        display: 'grid',
+        gridTemplateColumns : 'repeat(3, 1fr)',
         margin: '10px',
         padding: '10px',
         border: '2px solid blue',
@@ -16,8 +18,8 @@ const Countries = ({ fetchCountries }) => {
 
 
     return (
-        <div style={cardStyle}>
-            <h2>All the countries {countries.length} </h2>
+        <div style={cardStyleParent}>
+            
             {
                 countries.map(country => <Country key={country.ccn3.ccn3} country={country}></Country>)
             }
