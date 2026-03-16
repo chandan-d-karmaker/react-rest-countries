@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import './countryVIsited.css';
 
 
-const Country = ({ country }) => {
+const Country = ({ country, handleVisitedCountries }) => {
 
     const cardStyle = {
         margin: '10px',
@@ -15,11 +15,12 @@ const Country = ({ country }) => {
 
     const handleVisited =()=>{
         setVisited(!visited);
+        handleVisitedCountries(country);
     }
     
     // console.log(country.name.common);
     return (
-        <div style={cardStyle} className={visited && 'country-visited'}>
+        <div style={cardStyle} className={visited? 'country-visited' : undefined}>
             <img src={country.flags.flags.png} alt={country.flags.flags.alt} width='120px' />
             <h2>Name: {country.name.common} </h2>
             <h4>Capital: {country.capital.capital} </h4>
